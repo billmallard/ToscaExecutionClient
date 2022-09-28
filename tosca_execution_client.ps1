@@ -336,6 +336,7 @@ function fetchOrRefreshAccessToken() {
                 -ContentType $contentType                `
                 -Method Post                             `
                 -TimeoutSec $requestTimeout              `
+                -UseBasicParsing                         `
 
             log "INF" "Sucessfully fetched access token"
 
@@ -391,6 +392,7 @@ function enqueueExecution() {
             -ContentType $contentType                                             `
             -Method Post                                                          `
             -TimeoutSec $requestTimeout                                           `
+            -UseBasicParsing                                           `
 
         $status = $enqueueResponse.StatusCode
         $content = $enqueueResponse.Content
@@ -445,6 +447,7 @@ function fetchExecutionStatus () {
             -Headers $header                                                                  `
             -Method Get                                                                       `
             -TimeoutSec $requestTimeout                                                       `
+            -UseBasicParsing                                                                  `
 
         $status = $statusResponse.StatusCode
         $content = $statusResponse.Content
@@ -497,6 +500,7 @@ function fetchExecutionResults ([bool]$fetchPartialResults = $false) {
             -Headers $header                                                                                   `
             -Method Get                                                                                        `
             -TimeoutSec $requestTimeout                                                                        `
+            -UseBasicParsing                                                                        `
 
         $status = $resultsResponse.StatusCode
         $content = $resultsResponse.Content
