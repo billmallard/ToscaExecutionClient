@@ -581,7 +581,14 @@ function writeResults() {
       fi
     fi
 
-    echo -e ${executionResults} > ${resultsFilePath} 2> >(logErrorsFromStdIn)
+    #echo -e ${executionResults} > ${resultsFilePath} 2> >(logErrorsFromStdIn)
+    printf ${executionResults} > ${resultsFilePath} 2> >(logErrorsFromStdIn)
+    
+   # while read ${executionResults}
+     # do
+       # printf ${executionResults} > ${resultsFilePath}
+     # done < "${resultsFilePath}"
+    
    log "INF" "Finished writing execution results to file \"${resultsFilePath}\""
   fi
 }
