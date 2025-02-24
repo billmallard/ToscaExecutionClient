@@ -248,7 +248,6 @@ function fetchOrRefreshAccessToken() {
         --data-urlencode "grant_type=client_credentials" \
         --data-urlencode "client_id=${clientId}" \
         --data-urlencode "client_secret=${clientSecret}" \
-        --cacert "${caCertificate}"\
         ${insecureSwitch} \
         2> ${tmpFilePath}
     )
