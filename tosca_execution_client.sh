@@ -329,7 +329,7 @@ function enqueueExecution() {
       --header "Content-Type: application/json" \
       --header "Authorization: Bearer ${accessToken}" \
       --data "${enqueueParameters}" \
-      --cacert "${caCertificate}" \
+ #     --cacert "${caCertificate}" \
       ${insecureSwitch} \
       2> ${tmpFilePath}
   )
@@ -405,7 +405,7 @@ function fetchExecutionStatus() {
       --show-error \
       --request GET "${toscaServerUrl}/automationobjectservice/api/execution/${executionId}/status" \
       --header "Authorization: Bearer ${accessToken}" \
-      --cacert "${caCertificate}" \
+#      --cacert "${caCertificate}" \
       ${insecureSwitch} \
       2> ${tmpFilePath}
   )
@@ -483,7 +483,7 @@ function fetchExecutionResults() {
       --show-error \
       --request GET "${toscaServerUrl}/automationobjectservice/api/execution/${executionId}/results${queryParameters}" \
       --header "Authorization: Bearer ${accessToken}" \
-      --cacert "${caCertificate}" \
+#      --cacert "${caCertificate}" \
       ${insecureSwitch} \
       2> ${tmpFilePath}
   )
